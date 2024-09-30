@@ -34,11 +34,11 @@ func ValidationError(errs validator.ValidationErrors) Response {
 	for _, err := range errs {
 		switch err.ActualTag() {
 		case "required":
-			errMsgs = append(errMsgs, fmt.Sprintf("field %s is a required field"), err.Field())
+			errMsgs = append(errMsgs, fmt.Sprintf("field URL is a required field"))
 		case "url":
-			errMsgs = append(errMsgs, fmt.Sprintf("field %s is not a valid URL"), err.Field())
+			errMsgs = append(errMsgs, fmt.Sprintf("field URL is not a valid URL"))
 		default:
-			errMsgs = append(errMsgs, fmt.Sprintf("field %s is not valid"), err.Field())
+			errMsgs = append(errMsgs, fmt.Sprintf("field is not valid"))
 		}
 	}
 
